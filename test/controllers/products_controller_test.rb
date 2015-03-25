@@ -30,7 +30,7 @@ class ProductsControllerTest < ActionController::TestCase
     assert_redirected_to product_path(assigns(:product))
   end
 
-  test "should show product" do
+  test "should show products" do
     get :show, id: @product
     assert_response :success
   end
