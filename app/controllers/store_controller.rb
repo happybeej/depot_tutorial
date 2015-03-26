@@ -9,5 +9,15 @@
 class StoreController < ApplicationController
   def index
     @products = Product.order(:title)
+    #One way to count user page views
+    if session[:counter].nil?
+      session[:counter] = 1
+      @counter = session[:counter]
+      
+    else
+      session[:counter] += 1
+      @counter = session[:counter]
+    end
   end
 end
+
